@@ -1,0 +1,400 @@
+# AI Marketing Governance — 10-Minute Demo
+
+## 0:00–1:00 — Start with the business problem
+
+**Say:**
+
+"Let me start with the simple business problem.
+
+AI can now look at customer behavior, predict what a customer is likely to do, and recommend the next best action.
+
+The opportunity is huge.
+
+But there is a problem.
+
+The same AI that can reach a million customers very quickly can also make a million wrong decisions very quickly.
+
+So the question is not:
+
+'Can AI find the right customer?'
+
+The question is:
+
+'Should AI be allowed to act on that decision?'"
+
+**Key message:**
+
+> AI finds the opportunity. Governance controls the action.
+
+---
+
+## 1:00–2:00 — Why traditional marketing is inefficient
+
+**Say:**
+
+"Let's first look at the traditional approach.
+
+Marketing normally starts with a large customer segment.
+
+Then we apply some business rules and send the same campaign to a large number of customers.
+
+After that, we wait for the results.
+
+The problem is that the response rate is low, the feedback cycle is slow, and we are sending messages to many people who may not actually be interested."
+
+**Show:**
+
+Traditional campaign → Large segment → Generic message → Wait → Analyze
+
+**Then say:**
+
+"AI changes this.
+
+Instead of asking:
+
+'Who belongs to this segment?'
+
+we ask:
+
+'Who is most likely to respond right now?'"
+
+---
+
+## 2:00–3:00 — Introduce propensity
+
+**Say:**
+
+"This is where propensity comes in.
+
+The AI model gives every customer a probability or score.
+
+For example:
+
+Customer A — high propensity.
+
+Customer B — medium propensity.
+
+Customer C — low propensity.
+
+We can then focus on the customers with the highest probability of responding."
+
+**Show:**
+
+Customer data → AI scoring → Top customers → Campaign recommendation
+
+**Say:**
+
+"This gives us a very important KPI:
+
+### Higher relevance with fewer messages.
+
+We don't need to contact everyone.
+
+We can focus our spend and effort on the customers most likely to respond."
+
+The source describes propensity as a mathematical score predicting how likely a customer is to respond to a specific action at a specific time.
+
+---
+
+# 3:00–4:00 — The governance problem
+
+**Say:**
+
+"But now comes the important part.
+
+A propensity score is a prediction.
+
+It is not permission.
+
+The AI might say:
+
+'This customer is highly likely to respond.'
+
+That does not mean:
+
+'You are allowed to contact this customer.'"
+
+**Pause.**
+
+"That permission comes from governance."
+
+### Show three controls:
+
+**1. Identity**
+
+"Which AI agent is making this decision?"
+
+**2. Data permissions**
+
+"What customer data is this agent allowed to use?"
+
+**3. Policy**
+
+"Is this action allowed?"
+
+The source identifies these three controls as a named machine identity, an approved set of customer traits/destinations, and a real-time policy engine.
+
+---
+
+# 4:00–5:00 — Start the demo
+
+**Say:**
+
+"Now let me show this in the demo.
+
+We start with customer and engagement data.
+
+First, we apply deterministic business rules.
+
+These are rules that we know are always true.
+
+For example:
+
+Age > 18.
+
+Customer belongs to an allowed market.
+
+Customer is eligible for the campaign."
+
+**Show:**
+
+Customer Data
+↓
+Deterministic Rules
+↓
+Eligible Base Segment
+
+**Say:**
+
+"Only after this filtering do we allow the AI model to score the customers."
+
+---
+
+# 5:00–6:00 — AI makes the recommendation
+
+**Say:**
+
+"Now the AI model generates the propensity score.
+
+It can say:
+
+'Customer X has a high probability of responding to this offer.'
+
+The system then ranks the possible campaign actions.
+
+So now we have:
+
+Customer → Propensity Score → Recommended Action."
+
+**Show the recommendation clearly.**
+
+**Say:**
+
+"This is where AI gives us the business value.
+
+We can measure:
+
+* response rate
+* conversion rate
+* revenue per campaign
+* number of customers contacted
+* campaign cost
+
+The goal is simple:
+
+### More relevant actions with less wasted outreach."
+
+---
+
+# 6:00–7:00 — Governance intercepts the decision
+
+**Say:**
+
+"Now comes the most important part of the demo.
+
+The AI recommendation does not go directly to the email system.
+
+It first goes through the governance layer."
+
+**Show:**
+
+AI Recommendation
+↓
+Governance Adapter
+↓
+Identity + Policy + Consent
+↓
+Allow / Deny / Human Approval
+
+**Say:**
+
+"The governance layer asks:
+
+Who is the AI?
+
+What data did it use?
+
+Is this customer trait approved?
+
+Is the destination approved?
+
+Does the customer currently have consent?
+
+And is this action high enough risk to require a human?"
+
+The source's governed flow routes the recommendation through a governance adapter before activation and uses a short hash reference instead of directly passing customer PII.
+
+---
+
+# 7:00–8:00 — Show the human approval
+
+**Say:**
+
+"Here is an important difference.
+
+We don't need a human to approve every low-risk decision.
+
+But if the AI uses a sensitive or higher-risk attribute, the system can stop the workflow and ask for human approval."
+
+**Show:**
+
+AI recommendation
+↓
+Risk classification
+↓
+**Medium / High Risk**
+↓
+**Human Approval Required**
+
+**Say:**
+
+"For example, if the model derives a sensitive behavioral trait, governance can classify the action as medium risk.
+
+The system pauses.
+
+A human reviews it.
+
+If it is not allowed, we deny it.
+
+The campaign never reaches the customer."
+
+This reflects the source's example where a model-derived behavioral trait triggers medium-risk classification and mandatory human approval.
+
+---
+
+# 8:00–8:45 — Activation
+
+**Say:**
+
+"If everything passes the governance checks, we can activate the campaign.
+
+Before activation, we verify:
+
+* destination
+* consent
+* customer identity
+* campaign authorization
+
+Only then does the message go out."
+
+**Show:**
+
+Policy ✓
+Identity ✓
+Consent ✓
+Destination ✓
+Approval ✓
+
+### ACTIVATE
+
+**Say:**
+
+"This is the key difference.
+
+We are not stopping AI.
+
+We are controlling when AI is allowed to act."
+
+---
+
+# 8:45–9:15 — Audit trail
+
+**Say:**
+
+"And finally, everything is recorded.
+
+We capture:
+
+What rule was applied.
+
+What prediction the AI made.
+
+Who approved it.
+
+What consent existed at that moment.
+
+When the campaign was activated."
+
+**Show:**
+
+Decision → Approval → Consent → Activation → Audit
+
+**Say:**
+
+"So if someone asks six months later:
+
+'Why did this customer receive this offer?'
+
+we don't have to search through millions of logs.
+
+We have the decision trail."
+
+The source describes the segment approval, activation and audit as a unified append-only record, providing traceability for the rule, AI prediction, human approval and consent check.
+
+---
+
+# 9:15–10:00 — Executive KPI summary
+
+**Say:**
+
+"Let me close with the five KPIs I would put in front of an executive team.
+
+### KPI 1 — Revenue
+
+Are we generating more revenue from the same customer base?
+
+### KPI 2 — Conversion
+
+Are we improving the percentage of customers who actually respond?
+
+### KPI 3 — Cost
+
+Are we sending fewer unnecessary messages and reducing campaign cost?
+
+### KPI 4 — Risk
+
+How many unauthorized actions were blocked before activation?
+
+### KPI 5 — Accountability
+
+Can we explain every AI-driven customer action?"
+
+**Pause.**
+
+"So the business outcome is not simply:
+
+'We added AI to marketing.'
+
+The outcome is:
+
+### AI identifies the opportunity.
+
+### Governance controls the action.
+
+### Humans handle elevated risk.
+
+### Audit makes every decision explainable.
+
+That is the idea behind governed automation — not autonomous marketing."
+
+The source closes with essentially this operating model: AI identifies the opportunity, governance permits the action, humans oversee elevated cases, and the audit trail makes the result explainable.
